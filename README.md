@@ -1,4 +1,4 @@
-# PointcloudVisualizer
+# Pointcloud Visualizer
 ## _Very Simple Command Line OpenGL Pointcloud Renderer_
 
 ### Dependencies  
