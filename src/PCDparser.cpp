@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "PCDparser.h"
 #include <fstream>
+#include "StringUtils.h"
+
 
 namespace PCDparser
 {
@@ -22,7 +24,7 @@ namespace PCDparser
 				parsingHeader = false;
 			}
 
-			std::vector<std::string> parsedLine = tokenize(inputBuffer, " ");
+			std::vector<std::string> parsedLine = PointcloudVisualizer::tokenize(inputBuffer, " ");
 			std::vector<float> currentPoint;
 
 			if (parsingHeader)
@@ -50,19 +52,5 @@ namespace PCDparser
 		}
 
 		return -1;
-	}
-
-	std::vector<std::string> PCDparser::tokenize(std::string toTokenize, std::string token) {
-		std::vector<std::string> result;
-		char* tk = strtok((char*)toTokenize.c_str(), token.c_str());
-
-		// Keep printing tokens while one of delimiters are present. 
-		while (tk != NULL)
-		{
-			result.push_back(tk);
-			tk = strtok(NULL, token.c_str());
-		}
-
-		return result;
 	}
 }
