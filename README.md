@@ -9,4 +9,5 @@ OpenCV 4
 
 ### Supported filetypes
 pcd  
+csv  
 monochrome depth images (any accepted OpenCV compatible format: png,jpg/jpeg,tiff,bmp,ppm,etc)
